@@ -7,3 +7,10 @@ body {
 #map {
     height: 100vh; 
 }
+
+#map-selector {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+}
