@@ -10,10 +10,11 @@ function setLayer(id) {
         layer = null;
     }
     layer = L.tileLayer(
-        `http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=${id}&zoom={z}&x={x}&y={y}`,
+        `http://opencache{s}.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=${id}&zoom={z}&x={x}&y={y}`,
         {
             maxZoom: 20,
-            attribution: '<a href="https://www.kartverket.no/">Kartverket</a>'
+            attribution: '<a href="https://www.kartverket.no/">Kartverket</a>',
+            subdomains: ['', '2', '3']
         });    
     layer.addTo(map);
 }
