@@ -1,6 +1,8 @@
 Eksempel som viser hvordan kartdata fra [Kartverket](https://kartverket.no/) 
 kan brukes sammen med [Leaflet](https://leafletjs.com/).
 
+MERK: Ikke alle lag er er tilgjengelig i standard format for Leaflet.
+
 ### Referanser
 - https://leafletjs.com/
 - https://kartverket.no/api-og-data
