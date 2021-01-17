@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Bruk av kartdata fra kartverket.no med leafletjs.com.",
   "main": "index.js",
-  "browserslist": ">0.2%",
+  "browserslist": "defaults",
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html"
