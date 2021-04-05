@@ -2,25 +2,6 @@ import L from 'leaflet';
 
 const map = L.map('map').setView([65.505, 12], 5);
 
-// Load all layers from WMTS capabilities.
-// NOTE: No filtering on tile matrix set is done, 
-// so not all maps can be shown in LeafletJS.
-function loadCapabilities() {
-    const capabilitiesUrl = "https://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?request=GetCapabilities&service=WMS";
-    return fetch(capabilitiesUrl)
-        .then(response => response.text())
-        .then(str => new DOMParser().parseFromString(str, "text/xml"))
-        .then(data => {
-            return Array.from(data.querySelectorAll("Layer")).map(layer => {
-                return {
-                    title: layer.querySelector("Title")?.textContent,
-                    id: layer.querySelector("Identifier")?.textContent,
-                    format: layer.querySelector("Format")?.textContent,
-                };
-            })}
-        )
-};
-
 // Layers from Kartverket that shows in LeafletJS without extra plugins
 const availableLayers = [
     { id: 'norgeskart_bakgrunn', title: 'Norgeskart bakgrunn' },
@@ -72,5 +53,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     setOptions(availableLayers);
-//    loadCapabilities().then(setOptions);
 })
