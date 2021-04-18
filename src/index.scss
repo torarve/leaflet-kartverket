@@ -16,3 +16,17 @@ body {
     right: 0;
     z-index: 1000;
 }
+
+.location {
+    background: white;
+    padding: 4px 4px 4px 4px;
+    svg {
+        display: block;
+        margin: 0px;
+        fill: gray;
+    }
+
+    &.selected svg {
+      fill: blue;
+    }
+}
