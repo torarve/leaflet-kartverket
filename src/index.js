@@ -114,4 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     location.addTo(map);
+    // Fix: hide address bar on mobile browsers (https://developers.google.com/web/fundamentals/native-hardware/fullscreen/)
+    window.scrollTo(0,1);
 })
