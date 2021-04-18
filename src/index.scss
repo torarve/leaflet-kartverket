@@ -6,11 +6,9 @@ body {
     margin: 0px;
 }
 
-#map {
-    height: 100vh;
-    height: -webkit-fill-available;
-    height: -moz-fill-available;
-    height: fill-available;
+html, body, #map {
+    height: 100%;
+    width: 100vw;
 }
 
 #map-selector {
