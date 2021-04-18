@@ -87,6 +87,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     setOptions(availableLayers);
+    const current = availableLayers[0];
+    selectedMapElement.value = current.id;
+    setLayer(current.id);
 
     var location = L.control({position: 'bottomleft'});
     location.onAdd = function (map) {
