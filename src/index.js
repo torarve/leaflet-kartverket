@@ -32,9 +32,10 @@ function setLayer(id) {
         `https://opencache{s}.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=${id}&zoom={z}&x={x}&y={y}`,
         {
             maxZoom: 20,
+            detectRetina: true,
             attribution: '<a href="https://www.kartverket.no/">Kartverket</a>',
-            subdomains: ['', '2', '3']
-        });    
+            subdomains: ['', '2', '3'],
+        });
     layer.addTo(map);
 }
 
