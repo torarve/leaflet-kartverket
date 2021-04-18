@@ -46,12 +46,13 @@ function updatePosition(success) {
     const latLng = success.latlng;
     if (layer) {
         if (!marker) {
-            marker = L.circleMarker(latLng, {radius: 5});
+            marker = L.circle(latLng, {radius: success.accuracy});
             map.setView(latLng, 14);
             marker.addTo(map);
         }
         else {
             marker.setLatLng(latLng);
+            marker.setRadius(success.accuracy);
         }
     }
 }
