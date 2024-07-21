@@ -9,17 +9,16 @@
   "main": "index.js",
   "browserslist": "defaults",
   "scripts": {
-    "start": "parcel src/index.html --open",
-    "build": "parcel build src/index.html"
+    "dev": "vite",
+    "build": "vite build"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^1.12.4",
-    "parcel-plugin-nuke-dist": "^1.0.1",
-    "sass": "^1.32.4"
+    "sass": "^1.77.8",
+    "vite": "^5.3.4"
   },
   "dependencies": {
-    "leaflet": "^1.7.1"
+    "leaflet": "^1.9.4"
   }
 }
