@@ -4,23 +4,32 @@ import DefaultIcon from 'leaflet';
 const map = L.map('map').setView([65.505, 12], 5);
 
 // Layers from Kartverket that shows in LeafletJS without extra plugins
-const availableLayers = [
-    { id: 'norgeskart_bakgrunn', title: 'Norgeskart bakgrunn' },
-    { id: 'topo4', title: 'Topografisk norgeskart' },
-    { id: 'topo4graatone', title: 'Topografisk norgeskart (gråtone)' },
+
+/** Old layers */
+const old_availableLayers = [
+    { id: 'norgeskart_bakgrunn', title: 'Norgeskart bakgrunn' }, // replace with topo
+    { id: 'topo4', title: 'Topografisk norgeskart' }, // replace with topo
+    { id: 'topo4graatone', title: 'Topografisk norgeskart (gråtone)' }, // replace with topograatone
     { id: 'europa', title: 'Europakart' },
     { id: 'kartdata3', title: 'Kartdata 3' },
     { id: 'norges_grunnkart', title: 'Norges Grunnkart' },
     { id: 'norges_grunnkart_graatone', title: 'Norges Grunnkart (gråtone)' },
     { id: 'egk', title: 'Europeiske grunnkart' },
     { id: 'havbunn_grunnkart', title: 'Havbunn grunnkart' },
-    { id: 'terreng_norgeskart', title: 'Terreng norgeskart' },
+    { id: 'terreng_norgeskart', title: 'Terreng norgeskart' }, // replace with topo
     { id: 'sjokartraster', title: 'Sjøkart - raster' },
     { id: 'toporaster4', title: 'Topografisk raster' },
     { id: 'fjellskygge', title: 'Fjellskygge' },
-    { id: 'bakgrunnskart_forenklet', title: 'Forenklet bakgrunnskart' },
+    { id: 'bakgrunnskart_forenklet', title: 'Forenklet bakgrunnskart' }, // replace with topograatone
 ];
 
+const availableLayers = [
+    { id: 'topo', title: 'Topografisk norgeskart', openCache: false },
+    { id: 'topograatone', title: 'Topografisk gråtonekart', openCache: false },
+    { id: 'toporaster', title: 'Topografisk rasterkart', openCache: false },
+    { id: 'sjokartraster', title: 'Sjøkart - raster (gammel cahce server)', openCache: true },
+    { id: 'fjellskygge', title: 'Fjellskygge (gammel cache server)', openCache: true },
+]
 
 let layer = null;
 function setLayer(id) {
@@ -28,13 +37,19 @@ function setLayer(id) {
         map.removeLayer(layer);
         layer = null;
     }
+    
+    const openCache = availableLayers.find(x => x.id === id)?.openCache ?? false;
     layer = L.tileLayer(
-        `https://opencache{s}.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=${id}&zoom={z}&x={x}&y={y}`,
+        openCache
+            ? `https://opencache{s}.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=${id}&zoom={z}&x={x}&y={y}`
+            : `https://cache{s}.kartverket.no/v1/wmts/1.0.0/${id}/default/webmercator/{z}/{y}/{x}.png`,
         {
-            maxZoom: 20,
+            format: 'image/png',
+            minZoom: 5,
+            maxZoom: 18,
             detectRetina: true,
             attribution: '<a href="https://www.kartverket.no/">Kartverket</a>',
-            subdomains: ['', '2', '3'],
+            subdomains: openCache ? ['', '2', '3'] : ['', '2', '3', '4'],
         });
     layer.addTo(map);
 }
