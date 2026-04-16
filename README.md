@@ -8,8 +8,7 @@ I juli 2024 ble det registrert at den gamle cache-tjenesten begynte å blir over
 
 Kartene *topo*, *topograatone*, *toporaster* og *sjokartraster* er tilgjengelig via den nye tjenesten (`cache.kartverket.no`). Kartverket har publisert en 
 oversikt over de ulike cache tjenestene her: https://status.geonorge.no/cache.html.
-
-Merk: *fjellskygge* er ikke lenger tilgjengelig på den nye tjenesten og er fjernet.
+Merk at *fjellskygge* ikke lenger er tilgjengelig på den nye tjenesten og er derfor fjernet fra denne implementasjonen.
 
 ## Referanser
 - https://leafletjs.com/
