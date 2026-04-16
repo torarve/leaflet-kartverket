@@ -24,11 +24,10 @@ const old_availableLayers = [
 ];
 
 const availableLayers = [
-    { id: 'topo', title: 'Topografisk norgeskart', openCache: false },
-    { id: 'topograatone', title: 'Topografisk gråtonekart', openCache: false },
-    { id: 'toporaster', title: 'Topografisk rasterkart', openCache: false },
-    { id: 'sjokartraster', title: 'Sjøkart - raster (gammel cahce server)', openCache: true },
-    { id: 'fjellskygge', title: 'Fjellskygge (gammel cache server)', openCache: true },
+    { id: 'topo', title: 'Topografisk norgeskart' },
+    { id: 'topograatone', title: 'Topografisk gråtonekart' },
+    { id: 'toporaster', title: 'Topografisk rasterkart' },
+    { id: 'sjokartraster', title: 'Sjøkart - raster' },
 ]
 
 let layer = null;
@@ -38,18 +37,15 @@ function setLayer(id) {
         layer = null;
     }
     
-    const openCache = availableLayers.find(x => x.id === id)?.openCache ?? false;
     layer = L.tileLayer(
-        openCache
-            ? `https://opencache{s}.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=${id}&zoom={z}&x={x}&y={y}`
-            : `https://cache{s}.kartverket.no/v1/wmts/1.0.0/${id}/default/webmercator/{z}/{y}/{x}.png`,
+        `https://cache{s}.kartverket.no/v1/wmts/1.0.0/${id}/default/webmercator/{z}/{y}/{x}.png`,
         {
             format: 'image/png',
             minZoom: 5,
             maxZoom: 18,
             detectRetina: true,
             attribution: '<a href="https://www.kartverket.no/">Kartverket</a>',
-            subdomains: openCache ? ['', '2', '3'] : ['', '2', '3', '4'],
+            subdomains: ['', '2', '3', '4'],
         });
     layer.addTo(map);
 }

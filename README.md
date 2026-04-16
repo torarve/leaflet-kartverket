@@ -6,10 +6,10 @@ kan brukes sammen med [Leaflet](https://leafletjs.com/).
 Kartverket holder på å fase ut den gamle WMTS cachen (ref [Store endringer i Kartverkets tjenestetilbud for karttjenester](https://www.geonorge.no/aktuelt/Se-siste-nyheter/store-endringer-i-kartverkets-cachetjenester/)).
 I juli 2024 ble det registrert at den gamle cache-tjenesten begynte å blir overbelastet (ref [Treghet på karttjenesten opencache.statkart.no](https://www.kartverket.no/om-kartverket/nyheter/alle/2024/juli/treghet-pa-opencache.statkart.no)), og det ble nødvendig å gjøre om på deler av eksemplene.
 
-Dessverre er det kun kartene *topo*, *topograatone* og *toporaster* som er tilgjengelig via den nye tjenesten. Kartverket har publisert en 
+Kartene *topo*, *topograatone*, *toporaster* og *sjokartraster* er tilgjengelig via den nye tjenesten (`cache.kartverket.no`). Kartverket har publisert en 
 oversikt over de ulike cache tjenestene her: https://status.geonorge.no/cache.html.
 
-Jeg har lagt inn alle de nye kartlagene, men beholdt Sjøkart - raster
+Merk: *fjellskygge* er ikke lenger tilgjengelig på den nye tjenesten og er fjernet.
 
 ## Referanser
 - https://leafletjs.com/
@@ -42,10 +42,3 @@ Id: `sjokartraster`
 Link: [GeoNorge produktside](https://kartkatalog.geonorge.no/metadata/sjoekart-raster-cache-wmts/72044503-938b-4955-a931-9e5a7eabf28e)
 
 
-### Fjellskygge cache
-
-Denne tjenesten inneholder fjellskygger. Den er ment for å kombineres med andre tjenester.
-
-Id: `fjellskygge`
-
-Link: [GeoNorge produktside](https://kartkatalog.geonorge.no/metadata/fjellskygge-cache/cca7c129-fe66-4c96-9091-40d92290dd81)
