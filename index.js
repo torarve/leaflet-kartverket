@@ -45,7 +45,7 @@ function setLayer(id) {
             maxZoom: 18,
             detectRetina: true,
             attribution: '<a href="https://www.kartverket.no/">Kartverket</a>',
-            subdomains: ['', '2', '3', '4'],
+            subdomains: [''],
         });
     layer.addTo(map);
 }
