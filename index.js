@@ -1,5 +1,4 @@
 import L from 'leaflet';
-import DefaultIcon from 'leaflet';
 
 const map = L.map('map').setView([65.505, 12], 5);
 
@@ -53,7 +52,6 @@ function setLayer(id) {
 
 let marker = null;
 function updatePosition(success) {
-    const pos = success.coords;
     const latLng = success.latlng;
     if (layer) {
         if (!marker) {

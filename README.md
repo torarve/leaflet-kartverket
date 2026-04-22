@@ -30,7 +30,25 @@ Informasjon er hentet fra https://kartkatalog.geonorge.no/ og metadata beskrivel
 
 Tjenesten inneholder topografiske kart i målestokken 1:500 til 1:10M. Tjenesten inneholder kartdata, FKB og vbase data, men ikke matrikkeldata. Matrikkeldata kan bli funnet i egne wms-tjenester kalt Matrikkel Enkel WMS eller Matrikkekart WMS.
 
+Id: `topo`
+
 Link: [GeoNorge produkside](https://kartkatalog.geonorge.no/metadata/topografisk-norgeskart-cache/8f381180-1a47-4453-bee7-9a3d64843efa)
+
+### Topografisk gråtonekart cache
+
+Topografisk norgeskart i gråtone. Ellers tilsvarende innhold som topo.
+
+Id: `topograatone`
+
+Link: [GeoNorge produktside](https://kartkatalog.geonorge.no/metadata/topografisk-norgeskart-cache/8f381180-1a47-4453-bee7-9a3d64843efa)
+
+### Topografisk rasterkart cache
+
+Topografisk norgeskart i rasterversjon. Ellers tilsvarende innhold som topo.
+
+Id: `toporaster`
+
+Link: [GeoNorge produktside](https://kartkatalog.geonorge.no/metadata/topografisk-norgeskart-cache/8f381180-1a47-4453-bee7-9a3d64843efa)
 
 ### Sjøkart - raster cache WMTS
 
