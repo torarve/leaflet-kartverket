@@ -32,7 +32,7 @@ Tjenesten inneholder topografiske kart i målestokken 1:500 til 1:10M. Tjenesten
 
 Id: `topo`
 
-Link: [GeoNorge produkside](https://kartkatalog.geonorge.no/metadata/topografisk-norgeskart-cache/8f381180-1a47-4453-bee7-9a3d64843efa)
+Link: [GeoNorge produktside](https://kartkatalog.geonorge.no/metadata/topografisk-norgeskart-cache/8f381180-1a47-4453-bee7-9a3d64843efa)
 
 ### Topografisk gråtonekart cache
 
