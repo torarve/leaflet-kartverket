@@ -14,6 +14,9 @@
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
   "devDependencies": {
     "sass": "^1.99.0",
     "vite": "^8.0.9"
